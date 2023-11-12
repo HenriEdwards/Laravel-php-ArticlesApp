@@ -1,18 +1,18 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+   
+// if user visit / - invoke articlecontroller
+Route::get('/', [ArticleController::class, 'index']);
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+Route::get('/article/{id}', [ArticleController::class, 'show']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/tags/{tag_id}',  [TagController::class, 'show']);
+
+Route::get('/categories/{category_id}',  [CategoryController::class, 'show']);
+
+//Route::get('/article/{id}', [ArticleController::class, 'show'])->name('article.show');
