@@ -14,7 +14,7 @@ This project is a web application that allows users to view articles, categorize
 
 ## Usage
 - Clone the repository.
-- Navigate to the project via a terminal and type `php artisan server`.
+- Navigate to the project via a terminal and type `php artisan serve`.
 
 ## Screenshots
 
